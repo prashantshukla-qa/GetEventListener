@@ -1,0 +1,18 @@
+{
+  "name": "pupeteer-exp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "express": "~4.16.1",
+    "puppeteer": "^2.1.1",
+    "swagger-ui-express": "^4.1.3"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1"
+  }
+}

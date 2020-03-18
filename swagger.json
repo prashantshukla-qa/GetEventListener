@@ -1,0 +1,83 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "GetEventListener for Page Objects",
+        "description": "webservice to call getEventListener on a page object using puppeteer",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/api/v1",
+    "tags": [
+        {
+            "name": "GetEventListener",
+            "description": "API to get js events attached"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/puppet/geteventtree": {
+            "parameters": [
+                {
+                    "name": "url",
+                    "in": "query",
+                    "required": true,
+                    "description": "url of the page to be tested",
+                    "type": "string"
+                },
+                {
+                    "name": "selector",
+                    "in": "query",
+                    "required": true,
+                    "description": "css selector of the object to be tested",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "summary": "Get events attached to page object and all the parent nodes",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/puppet/getevent": {
+            "parameters": [
+                {
+                    "name": "url",
+                    "in": "query",
+                    "required": true,
+                    "description": "url of the page to be tested",
+                    "type": "string"
+                },
+                {
+                    "name": "selector",
+                    "in": "query",
+                    "required": true,
+                    "description": "css selector of the object to be tested",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "summary": "Gets event attached to provided page object only",
+                "responses": {
+                    "200": {
+                        "description": "User is found"
+                    }
+                }
+            }
+        }
+    }
+}
